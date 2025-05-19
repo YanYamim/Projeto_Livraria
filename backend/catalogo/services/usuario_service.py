@@ -26,8 +26,8 @@ def editar_usuario(dados):
 
     if not id_usuario:
         return {
-            'erros': {'id_usuario': 'ID de usuário não disponível'},
-            'status': status.HTTP_400_BAD_REQUEST
+            'errors': {'id_usuario': 'ID de usuário não disponível'},
+            'status': status.HTTP_404_NOT_FOUND
         }
     
     usuario = get_object_or_404(Usuario, id_usuario=id_usuario)
@@ -42,6 +42,6 @@ def editar_usuario(dados):
         }
     
     return {
-        'erros': serializer.errors,
+        'errors': serializer.errors,
         'status':status.HTTP_400_BAD_REQUEST
     }

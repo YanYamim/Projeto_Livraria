@@ -1,11 +1,10 @@
-from django.shortcuts import render
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status 
 
 from ..services import listar_usuarios as listar_usuarios_service
-from..services import cadastrar_usuario as cadastrar_usuario_service
-from..services import editar_usuario as editar_usuario_service
+from ..services import cadastrar_usuario as cadastrar_usuario_service
+from ..services import editar_usuario as editar_usuario_service
 
 @api_view(['GET'])
 def listar_usuarios():
