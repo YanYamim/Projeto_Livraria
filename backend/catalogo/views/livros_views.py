@@ -2,9 +2,9 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status 
 
-from ..services import listar_livros as listar_livros_service
-from ..services import cadastrar_livros as cadastrar_livros_service
-from ..services import editar_livros as editar_livros_service
+from catalogo.services.livros_service import listar_livros as listar_livros_service
+from catalogo.services.livros_service import cadastrar_livros as cadastrar_livros_service
+from catalogo.services.livros_service import editar_livros as editar_livros_service
 
 @api_view(['GET'])
 def listar_livros():
