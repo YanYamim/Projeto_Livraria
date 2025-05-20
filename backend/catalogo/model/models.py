@@ -13,9 +13,10 @@ class Livro(models.Model):
     id_livro = models.AutoField(primary_key=True)
     nome_livro = models.CharField(max_length=50, null=False)
     sinopse_livro = models.CharField(max_length=300, default='')
+    genero_livro = models.CharField(max_length=50, default='')
 
     def __str__(self):
-        return f'Nome: {self.nome_livro} | Sinopse: {self.sinopse_livro}'
+        return f'Nome: {self.nome_livro} | Sinopse: {self.sinopse_livro} | Gênero: {self.genero_livro}'
     
 class Usuario_Livro(models.Model):
     id_usuario = models.ForeignKey('Usuario', on_delete=models.CASCADE, related_name='usuario_livros')

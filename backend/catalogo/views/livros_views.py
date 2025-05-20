@@ -7,12 +7,12 @@ from ..services import cadastrar_livros as cadastrar_livros_service
 from ..services import editar_livros as editar_livros_service
 
 @api_view(['GET'])
-def listar_usuarios():
+def listar_livros():
     livros = listar_livros_service()
     return Response(livros, status=status.HTTP_200_OK)
 
 @api_view(['POST'])
-def cadastrar_usuarios(request):
+def cadastrar_livros(request):
     novo_livro = cadastrar_livros_service(request.data)
 
     if 'erros' in novo_livro:
